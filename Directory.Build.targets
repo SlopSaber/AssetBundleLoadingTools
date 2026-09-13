@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project>
+  <Target Name="ResolveBeatSaberReferenceHintPaths" BeforeTargets="ResolveAssemblyReferences">
+    <ItemGroup>
+      <Reference Update="@(Reference)" Condition="('%(Reference.HintPath)' == '' OR !Exists('%(Reference.HintPath)')) AND Exists('$(BeatSaberManagedDir)\%(Reference.Identity).dll')">
+        <HintPath>$(BeatSaberManagedDir)\%(Reference.Identity).dll</HintPath>
+        <Private>False</Private>
+      </Reference>
+      <Reference Update="@(Reference)" Condition="('%(Reference.HintPath)' == '' OR !Exists('%(Reference.HintPath)')) AND Exists('$(BeatSaberDir)\Plugins\%(Reference.Identity).dll')">
+        <HintPath>$(BeatSaberDir)\Plugins\%(Reference.Identity).dll</HintPath>
+        <Private>False</Private>
+      </Reference>
+      <Reference Update="@(Reference)" Condition="('%(Reference.HintPath)' == '' OR !Exists('%(Reference.HintPath)')) AND Exists('$(BeatSaberDir)\Libs\%(Reference.Identity).dll')">
+        <HintPath>$(BeatSaberDir)\Libs\%(Reference.Identity).dll</HintPath>
+        <Private>False</Private>
+      </Reference>
+    </ItemGroup>
+  </Target>
+</Project>

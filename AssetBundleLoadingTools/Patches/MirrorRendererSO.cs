@@ -6,6 +6,7 @@ using System.Runtime.CompilerServices;
 using UnityEngine;
 using UnityEngine.XR;
 
+#if false // Beat Saber 1.45 moved mirror rendering into the rendering pipeline; the legacy method no longer exists.
 namespace AssetBundleLoadingTools.Patches
 {
     /// <summary>
@@ -110,3 +111,4 @@ namespace AssetBundleLoadingTools.Patches
         }
     }
 }
+#endif

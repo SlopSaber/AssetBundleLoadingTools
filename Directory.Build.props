@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project>
+  <PropertyGroup>
+    <BeatSaberDir Condition="'$(BeatSaberDir)' == ''">$(MSBuildThisFileDirectory)..\Refs</BeatSaberDir>
+    <BeatSaberManagedDir Condition="'$(BeatSaberManagedDir)' == ''">$(BeatSaberDir)\Beat Saber_Data\Managed</BeatSaberManagedDir>
+    <ReferencePath>$(BeatSaberManagedDir);$(BeatSaberDir)\Libs;$(BeatSaberDir)\Plugins;$(ReferencePath)</ReferencePath>
+    <TargetFrameworkDirectory>$(BeatSaberManagedDir)</TargetFrameworkDirectory>
+    <TargetFrameworkDirectories>$(BeatSaberManagedDir)</TargetFrameworkDirectories>
+    <FrameworkPathOverride>$(BeatSaberManagedDir)</FrameworkPathOverride>
+    <EnableFrameworkPathOverride>True</EnableFrameworkPathOverride>
+  </PropertyGroup>
+</Project>
