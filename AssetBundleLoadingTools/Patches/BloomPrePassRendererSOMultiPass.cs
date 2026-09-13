@@ -7,11 +7,16 @@ using UnityEngine.XR;
 
 namespace AssetBundleLoadingTools.Patches
 {
-    [HarmonyPatch(typeof(BloomPrePassRendererSO), nameof(BloomPrePassRendererSO.GetCameraParams))]
+    [HarmonyPatch]
     internal class BloomPrePassRendererSOMultiPass
     {
         private static readonly MethodInfo CameraGetStereoEnabled = AccessTools.DeclaredPropertyGetter(typeof(Camera), nameof(Camera.stereoEnabled));
         private static readonly MethodInfo XRSettingsGetStereoRenderingMode = AccessTools.DeclaredPropertyGetter(typeof(XRSettings), nameof(XRSettings.stereoRenderingMode));
+
+        private static MethodBase TargetMethod() => AccessTools.Method(
+            typeof(BloomPrePassRendererSO),
+            nameof(BloomPrePassRendererSO.GetCameraParams),
+            new[] { typeof(Camera), typeof(Matrix4x4).MakeByRefType(), typeof(Matrix4x4).MakeByRefType(), typeof(Vector4).MakeByRefType() });
 
         public static IEnumerable<CodeInstruction> Transpiler(IEnumerable<CodeInstruction> instructions, ILGenerator generator)
         {
