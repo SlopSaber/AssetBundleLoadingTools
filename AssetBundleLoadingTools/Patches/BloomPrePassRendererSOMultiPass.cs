@@ -26,7 +26,7 @@ namespace AssetBundleLoadingTools.Patches
                 // make the if statement take into account multi pass
                 // if (camera.stereoEnabled && XRSettings.stereoRenderingMode != StereoRenderingMode.MultiPass)
                 .MatchForward(true,
-                    new CodeMatch(OpCodes.Ldarg_1),
+                    new CodeMatch(OpCodes.Ldarg_0),
                     new CodeMatch(i => i.Calls(CameraGetStereoEnabled)),
                     new CodeMatch(i => i.opcode == OpCodes.Brfalse && i.Branches(out stereoNotEnabledLabel))) // bool stereoEnabled
                 .ThrowIfInvalid("if (camera.stereoEnabled) not found")
