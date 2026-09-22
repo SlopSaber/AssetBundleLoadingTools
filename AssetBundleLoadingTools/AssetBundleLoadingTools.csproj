@@ -35,6 +35,8 @@
     <Reference Include="Main" />
     <Reference Include="Rendering" Publicize="True" />
     <Reference Include="SiraUtil" />
+    <Reference Include="Unity.RenderPipelines.Core.Runtime" />
+    <Reference Include="Unity.RenderPipelines.Universal.Runtime" />
     <Reference Include="Unity.TextMeshPro" />
     <Reference Include="Unity.XR.Management" />
     <Reference Include="Unity.XR.OpenXR" Publicize="True" />
@@ -53,9 +55,6 @@
     <EmbeddedResource Include="UI\*.bsml" />
   </ItemGroup>
     
-  <ItemGroup>
-    <ArtifactFiles Include="$(ProjectDir)..\ShaderBundles\*.shaderbundle" DestinationFolder="UserData\AssetBundleLoadingTools\ShaderBundles" />
-  </ItemGroup>
 
   <ItemGroup>
     <PackageReference Include="BSIPA.AssemblyPublicizer.MSBuild" Version="0.5.2">
