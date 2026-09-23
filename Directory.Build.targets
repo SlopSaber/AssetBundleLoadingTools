@@ -17,9 +17,4 @@
     </ItemGroup>
   </Target>
 
-  <Target Name="CopyToPlugins" AfterTargets="Build" Condition="'$(DisableCopyToPlugins)' != 'True' AND Exists('$(BeatSaberDir)\Plugins')">
-    <Message Text="Copying '$(TargetPath)' to '$(BeatSaberDir)\Plugins\$(AssemblyName).dll'." Importance="high" />
-    <Copy SourceFiles="$(TargetPath)" DestinationFiles="$(BeatSaberDir)\Plugins\$(AssemblyName).dll" />
-    <Copy SourceFiles="$(TargetDir)$(AssemblyName).pdb" DestinationFiles="$(BeatSaberDir)\Plugins\$(AssemblyName).pdb" Condition="Exists('$(TargetDir)$(AssemblyName).pdb')" />
-  </Target>
 </Project>

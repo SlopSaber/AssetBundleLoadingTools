@@ -1,7 +1,15 @@
 <?xml version="1.0" encoding="utf-8"?>
 <Project>
   <PropertyGroup>
-    <BeatSaberDir Condition="'$(BeatSaberDir)' == ''">$(MSBuildThisFileDirectory)..\Refs</BeatSaberDir>
+    <BeatSaberDir Condition="'$(BeatSaberDir)' == ''">D:\BSManager\BSInstances\1.45.1</BeatSaberDir>
+    <GameDirectory>$(BeatSaberDir)</GameDirectory>
+    <ImportBSMTTargets>true</ImportBSMTTargets>
+    <BSMTProjectType>BSIPA</BSMTProjectType>
+    <GenerateManifest>true</GenerateManifest>
+    <PluginId>AssetBundleLoadingTools</PluginId>
+    <PluginName>AssetBundleLoadingTools</PluginName>
+    <CopyPDB>false</CopyPDB>
+    <DisableCopyToGame>false</DisableCopyToGame>
     <BeatSaberManagedDir Condition="'$(BeatSaberManagedDir)' == ''">$(BeatSaberDir)\Beat Saber_Data\Managed</BeatSaberManagedDir>
     <ReferencePath>$(BeatSaberManagedDir);$(BeatSaberDir)\Libs;$(BeatSaberDir)\Plugins;$(ReferencePath)</ReferencePath>
     <TargetFrameworkDirectory>$(BeatSaberManagedDir)</TargetFrameworkDirectory>

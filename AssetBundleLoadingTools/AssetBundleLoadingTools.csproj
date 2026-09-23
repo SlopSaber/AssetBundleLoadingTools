@@ -31,6 +31,7 @@
     <Reference Include="HMLib" />
     <Reference Include="HMRendering" Publicize="True" />
     <Reference Include="HMUI" Publicize="True" />
+    <Reference Include="netstandard" HintPath="$(BeatSaberManagedDir)\netstandard.dll" Private="false" />
     <Reference Include="Newtonsoft.Json" />
     <Reference Include="Main" />
     <Reference Include="Rendering" Publicize="True" />
@@ -61,9 +62,9 @@
       <PrivateAssets>all</PrivateAssets>
       <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
     </PackageReference>
-    <PackageReference Include="nicoco007.BeatSaberModdingTools.Tasks" Version="0.1.0">
+    <PackageReference Include="BeatSaberModdingTools.Tasks" Version="2.0.0-beta7">
       <PrivateAssets>all</PrivateAssets>
-      <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+      <IncludeAssets>build;contentfiles;analyzers;buildtransitive</IncludeAssets>
     </PackageReference>
     <PackageReference Include="Microsoft.CodeAnalysis.CSharp.CodeStyle" Version="4.10.0">
       <PrivateAssets>all</PrivateAssets>
