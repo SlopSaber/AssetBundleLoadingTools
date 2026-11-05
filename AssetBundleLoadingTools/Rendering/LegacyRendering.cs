@@ -138,6 +138,7 @@ namespace AssetBundleLoadingTools.Rendering
             if (!grabPassRequested && type == LogType.Error && condition.StartsWith("ShaderLab::GrabPasses", StringComparison.Ordinal))
             {
                 grabPassRequested = true;
+                Plugin.Log.Info("A loaded shader uses GrabPass; providing the camera opaque texture as _GrabTexture.");
             }
         }
     }
