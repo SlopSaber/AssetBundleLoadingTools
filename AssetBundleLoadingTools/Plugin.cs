@@ -36,11 +36,13 @@ namespace AssetBundleLoadingTools
         public void OnApplicationStart()
         {
             harmony.PatchAll();
+            Rendering.LegacyRendering.StartListening();
         }
 
         [OnExit]
         public void OnApplicationQuit()
         {
+            Rendering.LegacyRendering.StopListening();
             harmony.UnpatchSelf();
         }
     }

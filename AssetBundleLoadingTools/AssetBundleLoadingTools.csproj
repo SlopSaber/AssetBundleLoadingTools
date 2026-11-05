@@ -59,7 +59,7 @@
     
 
   <ItemGroup>
-    <PackageReference Include="BSIPA.AssemblyPublicizer.MSBuild" Version="0.5.2">
+    <PackageReference Include="BSIPA.AssemblyPublicizer.MSBuild" Version="0.5.1">
       <PrivateAssets>all</PrivateAssets>
       <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
     </PackageReference>
